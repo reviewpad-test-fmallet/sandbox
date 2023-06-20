@@ -7,8 +7,6 @@ workflows:
       - if: true == true
         then: $failCheckStatus("failure 2")
 
-
-workflows:
   - name: CI Policy on Pull Requests
     run:
       # Commit messages must comply with conventional commits
