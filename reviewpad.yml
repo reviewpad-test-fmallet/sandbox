@@ -1,0 +1,6 @@
+
+workflows:
+  - name: For Test Purpose
+    run:
+      - if: true == true
+        then failCheckStatus("failure 1")
