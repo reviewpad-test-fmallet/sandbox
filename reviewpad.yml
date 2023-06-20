@@ -6,3 +6,27 @@ workflows:
         then: $failCheckStatus($sprintf("failure %s", ["1"]))
       - if: true == true
         then: $failCheckStatus("failure 2")
+
+
+workflows:
+  - name: CI Policy on Pull Requests
+    run:
+      # Commit messages must comply with conventional commits
+      - forEach:
+          value: $commitMessage
+          in: $commits()
+          do:
+            - if: $matchString("(fix|feat|docs):.+", $commitMessage) == false
+              then: '$failCheckStatus($sprintf("The following commit message does not comply with conventional commits: %s", [$commitMessage]))'
+      # Branch name must comply with naming convention
+      - if: $matchString("(fix|feat|docs)/.+", $head()) == false
+        then: $failCheckStatus($sprintf("The head branch '%s' must start either with fix/, feat/ or docs/", [$head()]))
+      # Pull Request title must comply with naming convention
+      - if: $matchString("(fix|feat|docs):.+", $title()) == false
+        then: '$failCheckStatus($sprintf("The Pull Request title must start either with fix:, feat: or docs:", [$title()]))'
+      # The pull request must have linear history: all commits should come one after another
+      - if: $hasLinearHistory() == false
+        then: $failCheckStatus("This Pull Request doesn't have a linear history of commits")
+      # Description must not be empty
+      - if: $description() == ""
+        then: $failCheckStatus("Please provide a meaningful description to this Pull Request")
