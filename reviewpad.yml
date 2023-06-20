@@ -7,6 +7,4 @@ workflows:
           - $failCheckStatus("failure 1")
           - $failCheckStatus("This Pull Request doesn't have a linear history of commits")
           - $failCheckStatus("Please provide a meaningful description to this Pull Request")
-          - '$failCheckStatus($sprintf("The Pull Request title must start either with fix:, feat: or docs:", [$title()]))'
-          - $failCheckStatus($sprintf("The head branch '%s' must start either with fix/, feat/ or docs/", [$head()]))
 
