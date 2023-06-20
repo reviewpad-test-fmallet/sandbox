@@ -4,3 +4,5 @@ workflows:
     run:
       - if: true == true
         then: $failCheckStatus("failure 1")
+      - if: true == true
+        then: $failCheckStatus("failure 2")
