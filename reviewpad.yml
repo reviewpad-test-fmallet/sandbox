@@ -5,6 +5,7 @@ workflows:
       - if: true == true
         then: 
           - $failCheckStatus("failure 1")
+          - '$failCheckStatus($sprintf("The following commit message does not comply with conventional commits: %s", [$commitMessage]))'
           - $failCheckStatus("This Pull Request doesn't have a linear history of commits")
           - $failCheckStatus("Please provide a meaningful description to this Pull Request")
           - '$failCheckStatus($sprintf("The Pull Request title must start either with fix:, feat: or docs:", [$title()]))'
