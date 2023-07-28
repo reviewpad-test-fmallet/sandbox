@@ -2,6 +2,4 @@ workflows:
   - name: foo
     run:
       - addLabel("foo")
-      
-checks:
-  - gitConflicts:
+
