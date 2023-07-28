@@ -3,3 +3,6 @@ workflows:
     run:
       - $addLabel("foo")
 
+      
+checks:
+  - gitConflicts:
