@@ -1,5 +1,5 @@
 workflows:
   - name: foo
     run:
-      - addLabel("foo")
+      - $addLabel("foo")
 
