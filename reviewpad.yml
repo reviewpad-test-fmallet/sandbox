@@ -8,3 +8,6 @@ workflows:
           - $failCheckStatus("This Pull Request doesn't have a linear history of commits")
           - $failCheckStatus("Please provide a meaningful description to this Pull Request")
 
+
+checks:
+  - gitConflicts:
