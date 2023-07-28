@@ -1,13 +1,3 @@
 
-workflows:
-  - name: For Test Purpose
-    run:
-      - if: true == true
-        then: 
-          - $failCheckStatus("failure 1")
-          - $failCheckStatus("This Pull Request doesn't have a linear history of commits")
-          - $failCheckStatus("Please provide a meaningful description to this Pull Request")
-
-
 checks:
   - gitConflicts:
