@@ -1,9 +1,6 @@
-workflows:
+workflow:
   - name: foo
     run:
       - $addLabel("foo")
-
-checks:
-  - gitConflict: 
 
 
