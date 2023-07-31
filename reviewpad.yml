@@ -4,6 +4,6 @@ workflows:
       - $addLabel("foo")
 
 checks:
-  gitConflict: 
+  - gitConflict: 
 
 
