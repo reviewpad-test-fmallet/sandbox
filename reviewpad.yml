@@ -6,9 +6,11 @@ workflows:
 checks:
   gitConflicts:
   largePR:
-    maxLinesOfCode: 1
+    parameters:
+      maxLinesOfCode: 1
   longLived:
-    maxDays: 0
+    parameters: 
+      maxDays: 0
 
   
 
