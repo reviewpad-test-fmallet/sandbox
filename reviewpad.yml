@@ -9,6 +9,8 @@ checks:
     maxLinesOfCode: 1
   longLivedPR:
     maxDays: 0
+  foo:
+  bar:
 
   
 
