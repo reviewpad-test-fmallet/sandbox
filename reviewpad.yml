@@ -1,4 +1,4 @@
-workflow:
+workflows:
   - name: foo
     run:
       - $addLabel("foo")
