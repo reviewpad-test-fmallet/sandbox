@@ -5,5 +5,7 @@ workflows:
 
 checks:
   gitConflicts:
+  largePR:
+    maxLinesOfCode: 1
 
 
