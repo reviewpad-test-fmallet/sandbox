@@ -8,6 +8,9 @@ checks:
   largePR:
     parameters:
       maxLinesOfCode: 1
+  longPickUpTime:
+    parameters:
+      hours: 0
   longLived:
     parameters: 
       maxDays: 0
