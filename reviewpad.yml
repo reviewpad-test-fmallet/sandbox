@@ -7,10 +7,8 @@ checks:
   gitConflicts:
   largePR:
     maxLinesOfCode: 1
-  longLivedPR:
+  longLived:
     maxDays: 0
-  foo:
-  bar:
 
   
 
