@@ -3,6 +3,12 @@ workflows:
     run:
       - $addLabel("foo")
 
+checks:
+  gitConflicts:
+  largePR:
+    maxLinesOfCode: 1
+  longLivedPR:
+    maxDays: 0
 
   
 
