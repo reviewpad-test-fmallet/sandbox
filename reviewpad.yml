@@ -11,6 +11,7 @@ checks:
   longPickUpTime:
     parameters:
       hours: 0
+  foo:
   longLived:
     parameters: 
       maxDays: 0
