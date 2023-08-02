@@ -8,6 +8,7 @@ checks:
   largePR:
     parameters:
       maxLinesOfCode: 1
+      bar: 4
   longPickUpTime:
     parameters:
       hours: 0
