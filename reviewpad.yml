@@ -3,6 +3,14 @@ workflows:
     run:
       - $addLabel("foo")
 
+  - name: Merge Protection if Critical-Annoted Code is Touched
+    run:
+      - if: $hasAnnotation("critical") && $reviewerStatus("my_github_id") != "APPROVED"
+        then:
+          - $addLabel("critical")
+          - $failCheckStatus("An approval from 'my_github_id' is required as a critical piece of code has been touched")
+
+          
 checks:
   gitConflicts:
   largePR:
