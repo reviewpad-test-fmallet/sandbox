@@ -9,7 +9,9 @@ checks:
     parameters:
       max-lines: 4
     severity: high
-
+  stale:
+    parameters:
+      max-idle-days: 0
   
 
 
