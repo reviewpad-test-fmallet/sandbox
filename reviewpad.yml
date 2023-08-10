@@ -12,18 +12,10 @@ workflows:
 
           
 checks:
-  gitConflicts:
-  largePR:
+  large:
     parameters:
-      maxLinesOfCode: 1
-      bar: 4
-  longPickUpTime:
-    parameters:
-      hours: 0
-  foo:
-  longLived:
-    parameters: 
-      maxDays: 0
+      max-lines: 4
+    severity: high
 
   
 
