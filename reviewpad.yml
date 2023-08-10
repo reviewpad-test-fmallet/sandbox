@@ -12,6 +12,8 @@ checks:
   stale:
     parameters:
       max-idle-days: 0
-  
+  long-lived:
+    parameters:
+      max-days: 0  
 
 
