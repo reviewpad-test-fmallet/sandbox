@@ -21,4 +21,8 @@ checks:
   git-conflict:
     severity: low
     activation: on
-
+  many-comments:
+    parameters:
+      max-comments: 20
+    severity: medium
+    activation: on
