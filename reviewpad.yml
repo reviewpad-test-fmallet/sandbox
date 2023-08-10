@@ -18,5 +18,7 @@ checks:
   long-pick-up-time:
     parameters:
       max-hours: 1
-
+  git-conflict:
+    severity: low
+    activation: on
 
