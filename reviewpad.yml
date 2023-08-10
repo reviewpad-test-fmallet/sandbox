@@ -15,5 +15,8 @@ checks:
   long-lived:
     parameters:
       max-days: 0  
+  long-pick-up-time:
+    parameters:
+      max-hours: 1
 
 
