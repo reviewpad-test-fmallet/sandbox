@@ -1,5 +1,5 @@
 workflows:
-  - name: blacklist-binary-files
+  - name: waiting-for-feedback
     run:
-      if: '$any(["file", "folder/file"], ($file: String => $isBinaryFileFile($file)))'
-      then: $fail("Blacklisted binary files aren't allowed in pull request")
+      if: $geComments() == []
+      then: $addLabel("waiting-for-feedback")
