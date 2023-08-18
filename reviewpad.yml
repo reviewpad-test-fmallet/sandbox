@@ -1,28 +1,5 @@
 workflows:
-  - name: ping
+  - name: blacklist-binary-files
     run:
-      - $addLabel($getAuthor())
-
-          
-checks:
-  large:
-    parameters:
-      max-lines: 4
-    severity: high
-  stale:
-    parameters:
-      max-idle-days: 0
-  long-lived:
-    parameters:
-      max-days: 0  
-  long-pick-up-time:
-    parameters:
-      max-hours: 1
-  git-conflict:
-    severity: low
-    activation: on
-  many-comments:
-    parameters:
-      max-comments: 20
-    severity: medium
-    activation: on
+      if: '$any(["file", "folder/file"], ($file: String => $isBinaryFileFile($file)))'
+      then: $fail("Blacklisted binary files aren't allowed in pull request")
